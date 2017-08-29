@@ -3,9 +3,9 @@ var mysql = require('mysql');
 
 var connection = mysql.createConnection({
 	host:'localhost',
-	port: 3306,
+	port: 8080,
 	user: 'root',
-	password: 'BillBurrIsTuff34',
+	password: '',
 	database: 'Bamazon'
 });
 
@@ -22,8 +22,6 @@ function dispProduct(){
 		for(i = 0; i < res.length; i++) {
 			console.log('Item ID: ' + res[i].id + ' Product: ' + res[i].product_name + ' Department: ' + res[i].department_name + ' Price: ' + res[i].price + ' Stock: ' + res[i].stock_quantity);
 		}
-
-		Order();
 	});
 }
 
@@ -77,6 +75,7 @@ function Order() {
 }
 
 dispProduct();
+Order();
 
 
 
